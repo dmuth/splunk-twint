@@ -6,9 +6,6 @@
 # Errors are fatal
 set -e
 
-#
-# Are we running the full version? (Lite version by default)
-#
 NAME="dmuth1/twint"
 
 #

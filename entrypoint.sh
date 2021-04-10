@@ -55,5 +55,5 @@ fi
 # Change to /mnt since that should be linked to the host directory, then run.
 #
 cd /mnt
-exec /usr/bin/twint $@
+exec /usr/local/bin/twint $@
 

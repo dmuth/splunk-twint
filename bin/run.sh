@@ -6,17 +6,7 @@
 # Errors are fatal
 set -e
 
-#
-# Are we running the full version? (Lite version by default)
-#
-NAME="twint-lite"
-FULL=""
-if test "$1" == "full"
-then
-	NAME="twint-full"
-	FULL="full"
-	shift
-fi
+NAME="twint"
 
 #
 # Change to the parent of this script
@@ -24,7 +14,7 @@ fi
 pushd $(dirname $0) > /dev/null
 cd ..
 
-./bin/build.sh ${FULL}
+./bin/build.sh
 
 echo "# "
 echo "# Running Docker container..."

@@ -6,11 +6,7 @@
 # Errors are fatal
 set -e
 
-#
-# Are we running the full version? (Lite version by default)
-#
-NAME="dmuth1/twint-lite"
-FULL=""
+NAME="dmuth1/twint"
 
 # The name of any Python script we're running
 SCRIPT=""
@@ -26,13 +22,7 @@ DOCKER_ARGS=""
 #
 TWINT_TIMEOUT=${TWINT_TIMEOUT:-120}
 
-if test "$1" == "full"
-then
-	NAME="dmuth1/twint-full"
-	FULL="full"
-	shift
-
-elif test "$1" == "--run-python-script"
+if test "$1" == "--run-python-script"
 then
 
 	if test ! "$2"

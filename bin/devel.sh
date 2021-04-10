@@ -6,16 +6,8 @@
 # Errors are fatal
 set -e
 
-#
-# Are we building/running the full version? (Lite version by default)
-#
 FULL=""
-NAME="twint-lite"
-if test "$1" == "full"
-then
-	FULL=1
-	NAME="twint-full"
-fi
+NAME="twint"
 
 
 #

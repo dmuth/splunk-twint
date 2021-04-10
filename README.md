@@ -41,18 +41,6 @@ If you want to download multiple Twitter timelines or a very busy user's timelin
 please check out more detailed instructions in <a href="HOW-TO-DOWNLOAD-MANY-TWEETS.md">HOW-TO-DOWNLOAD-MANY-TWEETS.md</a>.
 
 
-#### "Twint-lite"
-
-In a few places, the term "twint-lite" is referenced.  If you look in 
-<a href="Dockerfile-lite#L20">the Dockerfile around line 20</a>, you'll see that I wrote
-a series of `sed` commands to remove refernces to the `pandas` module.  I have no issues
-with that module per se, but its presence was causing builds to take upwards of 10-15 minutes
-on my machine.  Removing references to it sped up builds of the Docker image to be around 30 seconds,
-without breaking the core functionality of pulling Twitter timelines.
-
-Or, to paraphrase Adam Savage, I rejected the reality and substituted my own. :-)
-
-
 #### Running Python scripts in Splunk
 
 The Twint CLI is just a wrapper for the Twint Python module.  The module can be 
@@ -98,11 +86,11 @@ By default, data will be read from the directory `logs/`, so all tweets should b
 ## Development
 
 - Twint Docker Management:
-   - `./bin/build.sh [ full ]` - Build Docker image. For all scripts where `full` is available, if it is speicfied as the first argument, the full (with Pandas) verison will be built.  Otherwise, the Lite version will be built.
-   - `./bin/devel.sh [ full ]` - Build Docker image and spawn interactive shell.
-   - `./bin/push.sh [ full ]` - Push Docker image to Docker Hub.
-   - `./bin/pull.sh [ full ]` - Pull Docker image from Docker Hub.
-   - `./bin/run.sh [ full ] args` - Run for production use. Additional args should be passed in on the command line.
+   - `./bin/build.sh` - Build Docker image. 
+   - `./bin/devel.sh` - Build Docker image and spawn interactive shell.
+   - `./bin/push.sh` - Push Docker image to Docker Hub.
+   - `./bin/pull.sh` - Pull Docker image from Docker Hub.
+   - `./bin/run.sh args` - Run for production use. Additional args should be passed in on the command line.
 - Splunk Management:
    - `./bin/splunk-start.sh --devel` - Start Splunk Lab in an interactive shell.  Exiting the shell will terminate the Splunk Lab container.
 
